@@ -109,3 +109,11 @@ export async function addRating(id: string, stars: number): Promise<void> {
     stars,
   ]);
 }
+
+export async function getPizzaOfTheDay(): Promise<Pizza> {
+  "use cache";
+  cacheLife("days");
+  const pizzas = await getPizzas();
+  const day = Math.floor(Date.now() / 86_400_000);
+  return pizzas[day % pizzas.length];
+}

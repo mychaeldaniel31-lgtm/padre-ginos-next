@@ -1,5 +1,5 @@
-import { Suspense } from "react";
 import MenuExplorer from "@/components/MenuExplorer";
+import PizzaOfTheDay from "@/components/PizzaOfTheDay";
 import { getFavoriteIds, getPizzas } from "@/lib/data";
 
 export default async function MenuPage() {
@@ -8,10 +8,9 @@ export default async function MenuPage() {
 
     return (
         <section>
+            <PizzaOfTheDay />
             <h1 className="mb-6 text-3xl font-black">Menu</h1>
-            <Suspense fallback={<p>Loading menu...</p>}>
-                <MenuExplorer pizzas={pizzas} favoriteIdsPromise={favoriteIdsPromise} />
-            </Suspense>
+            <MenuExplorer pizzas={pizzas} favoriteIdsPromise={favoriteIdsPromise} />
         </section>
     );
 }

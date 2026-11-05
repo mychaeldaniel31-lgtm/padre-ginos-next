@@ -18,3 +18,4 @@ Classroom switches:
 - `DEMO_READ_LATENCY_MS` / `DEMO_WRITE_LATENCY_MS` in `.env.local` change the artificial delay (defaults 300 / 800 ms).
 
 Each step of the workshop is a git tag. See `README-DAY1.md`.
+t
